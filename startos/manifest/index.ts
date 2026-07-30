@@ -5,7 +5,7 @@ export const manifest = setupManifest({
   id: 'gobrrr-pool',
   title: 'GoBrrr Pool',
   license: 'GPL-3.0',
-  packageRepo: 'https://github.com/gobrrrme/gobrrr-pool-startos',
+  packageRepo: 'https://github.com/gobrrrme/GoBrrr-Pool-StartOS',
   upstreamRepo: 'https://github.com/gobrrrme/GoBrrr-Pool',
   marketingUrl: 'https://gobrrr.me',
   donationUrl: null,
