@@ -15,6 +15,7 @@ import { sdk } from './sdk'
 import {
   hostPort,
   mempoolPublicApi,
+  poolSignature,
   rpcUser,
   stratumHighDiffPort,
   stratumPort,
@@ -94,7 +95,7 @@ export const main = sdk.setupMain(async ({ effects }) => {
         env: {
           ...bitcoinEnv,
           ...(zmqAddr ? { BITCOIN_ZMQ_HASHBLOCK: `tcp://${zmqAddr}` } : {}),
-          POOL_SIGNATURE: settings.poolSignature,
+          POOL_SIGNATURE: poolSignature,
           STRATUM_PORT: String(stratumPort),
           STRATUM_HIGHDIFF_PORT: String(stratumHighDiffPort),
           START_DIFFICULTY: String(settings.startDifficulty),

@@ -29,6 +29,6 @@ To let miners outside your LAN connect, enable additional gateways on the Stratu
 ## Using the available features
 
 - The dashboard shows pool hashrate, connected workers, best shares ("bestever"), and per-worker statistics.
-- Use the **Settings** action to adjust the pool signature (embedded in the coinbase of blocks you find) and difficulty tuning. Defaults are sensible for typical home miners — you only need this if you know why.
+- Use the **Settings** action for difficulty tuning. Defaults are sensible for typical home miners — you only need this if you know why.
 - The high-diff port (4444) rejects shares below a very high difficulty. Use it only for large farms or rented hashrate; a Bitaxe or USB miner belongs on port 3333.
 - Bitcoin price, fee, and block data in the dashboard comes from the **Mempool** service if you have it installed and running. Without it, the dashboard falls back to the public mempool.space API, which means your server makes clearnet requests to a third party. Install the Mempool service if you want to avoid that.

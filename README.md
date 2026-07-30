@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icon.svg" alt="GoBrrr Pool Logo" width="21%">
+  <img src="icon.png" alt="GoBrrr Pool Logo" width="21%">
 </p>
 
 # GoBrrr Pool on StartOS
@@ -49,7 +49,7 @@ A third daemon (`log-rotate`) reuses the webui image to run a shell loop that tr
 
 ## Configuration Management
 
-All ckpool configuration is derived: the **Settings** action writes `settings.json`, and `startos/main.ts` maps it (plus the Bitcoin dependency's bridge address and generated RPC credentials) to the environment variables the ckpool entrypoint consumes. There is no user-editable ckpool.conf. Payout addresses are never configured — they arrive per-connection as stratum usernames (solo mode).
+All ckpool configuration is derived: the **Settings** action writes `settings.json`, and `startos/main.ts` maps it (plus the Bitcoin dependency's bridge address and generated RPC credentials) to the environment variables the ckpool entrypoint consumes. There is no user-editable ckpool.conf. Payout addresses are never configured — they arrive per-connection as stratum usernames (solo mode). The coinbase signature is fixed to `GoBrrrPool_start9` (not user-configurable, mirroring the Umbrel package's platform-tagged signature).
 
 `MEMPOOL_API_URL` for the dashboard is wired automatically: the local Mempool service's address when installed, otherwise the public mempool.space API.
 
@@ -63,7 +63,7 @@ All ckpool configuration is derived: the **Settings** action writes `settings.js
 
 ## Actions (StartOS UI)
 
-- **Settings** — pool signature (max 32 chars, embedded in coinbase), start/min/max difficulty, high-diff threshold, block poll interval, work update interval.
+- **Settings** — start/min/max difficulty, high-diff threshold, block poll interval, work update interval.
 
 ## Backups and Restore
 

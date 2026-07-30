@@ -21,10 +21,7 @@ const dict = {
   'Create RPC credentials on your Bitcoin node for GoBrrr Pool': 13,
   // actions/settings.ts
   Settings: 14,
-  'Pool signature and difficulty tuning': 15,
-  'Pool Signature': 16,
-  'Short text embedded in the coinbase of blocks found by this pool': 17,
-  'Between 1 and 32 characters': 18,
+  'Difficulty and work generation tuning': 15,
   'Start Difficulty': 19,
   'Initial share difficulty for new miners, before vardiff adjusts': 20,
   'Minimum Difficulty': 21,

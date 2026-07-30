@@ -4,7 +4,6 @@ import { sdk } from '../sdk'
 // Pool tuning written by the Settings action; main.ts maps these to the env
 // vars the ckpool entrypoint consumes.
 const shape = z.object({
-  poolSignature: z.string().max(32).catch('GoBrrrPool'),
   startDifficulty: z.number().int().min(1).catch(10000),
   minDifficulty: z.number().int().min(1).catch(1),
   maxDifficulty: z.number().int().min(0).catch(0),

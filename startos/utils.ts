@@ -12,6 +12,9 @@ export const stratumHighDiffPort = 4444
 /** RPC username created on the Bitcoin node for this service */
 export const rpcUser = 'gobrrr_pool'
 
+/** Coinbase signature of blocks found by this pool (max 32 chars, fixed) */
+export const poolSignature = 'GoBrrrPool_start9'
+
 /** Public mempool API used when the local Mempool service is not installed */
 export const mempoolPublicApi = 'https://mempool.space/api'
 

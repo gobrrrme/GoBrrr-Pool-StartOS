@@ -4,20 +4,6 @@ import { sdk } from '../sdk'
 const { InputSpec, Value } = sdk
 
 const settingsInputSpec = InputSpec.of({
-  poolSignature: Value.text({
-    name: i18n('Pool Signature'),
-    description: i18n(
-      'Short text embedded in the coinbase of blocks found by this pool',
-    ),
-    required: true,
-    default: 'GoBrrrPool',
-    patterns: [
-      {
-        regex: '^.{1,32}$',
-        description: i18n('Between 1 and 32 characters'),
-      },
-    ],
-  }),
   startDifficulty: Value.number({
     name: i18n('Start Difficulty'),
     description: i18n(
@@ -77,7 +63,7 @@ export const settings = sdk.Action.withInput(
 
   {
     name: i18n('Settings'),
-    description: i18n('Pool signature and difficulty tuning'),
+    description: i18n('Difficulty and work generation tuning'),
     warning: null,
     allowedStatuses: 'any',
     group: null,
