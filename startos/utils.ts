@@ -9,8 +9,8 @@ export const stratumPort = 3333
 /** High-difficulty stratum port (fixed minimum difficulty = highDiff setting) */
 export const stratumHighDiffPort = 4444
 
-/** RPC username created on the Bitcoin node for this service */
-export const rpcUser = 'gobrrr_pool'
+/** Prefix of the RPC username created on the Bitcoin node for this service */
+export const rpcUserPrefix = 'gobrrr_pool'
 
 /** Coinbase signature of blocks found by this pool (max 32 chars, fixed) */
 export const poolSignature = 'GoBrrrPool_start9'

@@ -16,7 +16,7 @@ import {
   hostPort,
   mempoolPublicApi,
   poolSignature,
-  rpcUser,
+  rpcUserPrefix,
   stratumHighDiffPort,
   stratumPort,
   uiPort,
@@ -26,7 +26,7 @@ export const main = sdk.setupMain(async ({ effects }) => {
   console.info(i18n('Starting GoBrrr Pool!'))
 
   const settings = (await settingsJson.read().const(effects))!
-  const rpcPassword = await storeJson.read((s) => s.rpcPassword).const(effects)
+  const store = await storeJson.read().const(effects)
 
   const rpcAddr = await sdk.host
     .getBridgeAddress(effects, {
@@ -58,8 +58,8 @@ export const main = sdk.setupMain(async ({ effects }) => {
   const bitcoinEnv = {
     BITCOIN_RPC_HOST: rpc.host,
     BITCOIN_RPC_PORT: String(rpc.port),
-    BITCOIN_RPC_USER: rpcUser,
-    BITCOIN_RPC_PASS: rpcPassword ?? '',
+    BITCOIN_RPC_USER: store?.rpcUsername ?? rpcUserPrefix,
+    BITCOIN_RPC_PASS: store?.rpcPassword ?? '',
   }
 
   const sharedMounts = () =>

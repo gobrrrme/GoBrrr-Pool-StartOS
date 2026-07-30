@@ -76,7 +76,7 @@ All ckpool configuration is derived: the **Settings** action writes `settings.js
 
 ## Dependencies
 
-- **Bitcoin** (`bitcoind` — Bitcoin Core or Bitcoin Knots) — required, must be running and synced. Tasks configure it: pruning off (a pruned node's RPC is unreachable by dependents), ZMQ block notifications on, and a dedicated `rpcauth` user generated with a password stored in this package's `store.json`. ckpool uses RPC (`getblocktemplate`, `submitblock`, …) and ZMQ `hashblock` push notifications, falling back to 50 ms polling if ZMQ is unavailable.
+- **Bitcoin** (`bitcoind` — Bitcoin Core or Bitcoin Knots) — required, must be running and synced. Tasks configure it: pruning off (a pruned node's RPC is unreachable by dependents), ZMQ block notifications on, and a dedicated `rpcauth` user generated with credentials stored in this package's `store.json`. The username carries a per-install random suffix because bitcoind's credential task refuses existing usernames — without the suffix, a reinstall would collide with the entry the previous install left behind. Uninstalling GoBrrr Pool does not remove its `rpcauth` entry from Bitcoin; stale entries can be removed with Bitcoin's "Delete RPC Users" action. ckpool uses RPC (`getblocktemplate`, `submitblock`, …) and ZMQ `hashblock` push notifications, falling back to 50 ms polling if ZMQ is unavailable.
 - **Mempool** — optional. When installed, the dashboard's price/fee/block data is fetched from it over the bridge instead of from mempool.space (clearnet).
 
 ## Limitations and Differences
