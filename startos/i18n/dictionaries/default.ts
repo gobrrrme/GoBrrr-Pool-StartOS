@@ -16,7 +16,7 @@ const dict = {
   'Stratum High-Diff': 10,
   'Stratum port with a very high fixed minimum difficulty, for large farms and hashrate rentals': 11,
   // dependencies.ts
-  'GoBrrr Pool requires an unpruned Bitcoin node with ZMQ block notifications enabled': 12,
+  'The Bitcoin service only exposes RPC to other services when pruning is disabled. GoBrrr Pool needs RPC access and ZMQ block notifications.': 12,
   // init/taskRpcCredentials.ts
   'Create RPC credentials on your Bitcoin node for GoBrrr Pool': 13,
   // actions/settings.ts

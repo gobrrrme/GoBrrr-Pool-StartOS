@@ -15,7 +15,7 @@ Solo mining means there is nothing to configure for payouts: each miner authenti
 
 ## Getting set up
 
-1. Install and start **Bitcoin** (Bitcoin Core or Bitcoin Knots) and let it fully sync. GoBrrr Pool needs an unpruned node.
+1. Install and start **Bitcoin** (Bitcoin Core or Bitcoin Knots) and let it fully sync. Pruning must be off — not because mining needs old blocks, but because the Bitcoin service only exposes RPC to other services when it is unpruned.
 2. When you install GoBrrr Pool, tasks will guide you through preparing Bitcoin: enabling ZMQ block notifications, disabling pruning, and creating RPC credentials for the pool. Complete them all.
 3. Start GoBrrr Pool and wait for both health checks to turn green.
 4. Point a miner at the **Stratum** interface address, port 3333:

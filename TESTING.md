@@ -7,8 +7,9 @@ by sideloading the `.s9pk` file.
 
 - StartOS **0.4.0.1** or later (x86_64 or aarch64)
 - **Bitcoin** (Bitcoin Core or Bitcoin Knots) installed and **fully synced**.
-  The node must be unpruned — if yours is pruned, expect a longer resync after
-  the setup task disables pruning.
+  Pruning must be off (the Bitcoin service only exposes RPC to other services
+  when unpruned) — if yours is pruned, expect a resync after the setup task
+  disables pruning.
 - A miner to point at the pool (Bitaxe, any ASIC, or cpuminer for smoke tests)
 
 ## Install

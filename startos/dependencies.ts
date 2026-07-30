@@ -17,7 +17,7 @@ export const setDependencies = sdk.setupDependencies(async ({ effects }) => {
     },
     when: { condition: 'input-not-matches', once: false },
     reason: i18n(
-      'GoBrrr Pool requires an unpruned Bitcoin node with ZMQ block notifications enabled',
+      'The Bitcoin service only exposes RPC to other services when pruning is disabled. GoBrrr Pool needs RPC access and ZMQ block notifications.',
     ),
   })
 
