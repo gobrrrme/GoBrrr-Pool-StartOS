@@ -13,11 +13,11 @@ export const manifest = setupManifest({
   volumes: ['main', 'startos', 'logs', 'sockets'],
   images: {
     ckpool: {
-      source: { dockerTag: 'ghcr.io/gobrrrme/gobrrr-ckpool:v1.2.1' },
+      source: { dockerTag: 'ghcr.io/gobrrrme/gobrrr-ckpool:v1.2.2' },
       arch: ['x86_64', 'aarch64'],
     },
     webui: {
-      source: { dockerTag: 'ghcr.io/gobrrrme/gobrrr-pool-webui:v1.2.1' },
+      source: { dockerTag: 'ghcr.io/gobrrrme/gobrrr-pool-webui:v1.2.2' },
       arch: ['x86_64', 'aarch64'],
     },
   },

@@ -44,7 +44,7 @@ A third daemon (`log-rotate`) reuses the webui image to run a shell loop that tr
 | --- | --- | --- | --- |
 | `main` | `/app/data` (webui) | `miner-types.json` — long-term leaderboard cache | yes |
 | `startos` | (file models) | `settings.json`, `store.json` (generated RPC password) | yes |
-| `logs` | `/var/log/ckpool` (both daemons) | `ckpool.log`, per-worker `users/` files, `pool/` status | no |
+| `logs` | `/var/log/ckpool` (both daemons) | `ckpool.log`, per-worker `users/` files, `pool/` status | stats only (see below) |
 | `sockets` | `/tmp/ckpool` (both daemons) | ckpool unix sockets (webui reads stats through them) | no |
 
 ## Configuration Management
@@ -66,8 +66,7 @@ All ckpool configuration is derived: the **Settings** action writes `settings.js
 - **Settings** — start/min/max difficulty, high-diff threshold, block poll interval, work update interval.
 
 ## Backups and Restore
-
-`main` and `startos` volumes only. Logs and sockets are deliberately excluded — worker "bestever" stats live in log-volume `users/` files and are rebuilt from live data; the leaderboard cache (`miner-types.json`) is preserved.
+`main` and `startos` volumes. ckpool persists pool totals and per-user/worker stats (hashrate averages, best shares) in `pool/` and `users/` on the `logs` volume and reloads them on start. Since `ckpool.log` on that volume grows by gigabytes, the volume itself is not backed up; instead a pre-backup hook copies `pool/` and `users/` into `main` (`ckpool-stats/`), and a post-restore hook copies them back. Backups made without the staged stats restore normally, just without ckpool history. The `sockets` volume is ephemeral and not backed up.
 
 ## Health Checks
 

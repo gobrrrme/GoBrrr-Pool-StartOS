@@ -40,7 +40,7 @@ for anything unexpected — logs and screenshots welcome. Especially interesting
 - Restart GoBrrr Pool: clean start, no errors?
 - If you run the **Mempool** service: dashboard price/fee data should come from
   it automatically (and fall back to mempool.space without it)
-- Backup → restore: leaderboard data (miner types, best diffs) survives
+- Backup → uninstall → restore: pool totals, per-worker best shares, and the leaderboard survive
 - Uninstall: note that the pool's RPC user stays behind in Bitcoin — remove it
   with Bitcoin's *Delete RPC Users* action if you want to clean up fully
 
